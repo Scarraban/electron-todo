@@ -10,7 +10,7 @@
     const electron = require('electron');
     const { ipcRenderer } = electron;
 
-    ipcRenderer.on('todos:clear', (event) => {
+    ipcRenderer.on('todo:clear', (event) => {
       document.querySelector('ul').innerHTML = '';
     })
 

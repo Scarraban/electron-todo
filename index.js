@@ -38,7 +38,7 @@ const menuTemplate = [
       {
         label: 'Clear Todos',
         click() {
-          mainWindow.webContents.send('todos:clear');
+          mainWindow.webContents.send('todo:clear');
         }
       },
       {
