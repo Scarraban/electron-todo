@@ -10,9 +10,7 @@
     const electron = require('electron');
     const { ipcRenderer } = electron;
 
-    ipcRenderer.on('todo:clear', (event) => {
-      document.querySelector('ul').innerHTML = '';
-    })
+    ipcRenderer.on('todo:clear', (event) => document.querySelector('ul').innerHTML = '')
 
     ipcRenderer.on('todo:add', (event, todo) => {
       const li = document.createElement('li');
