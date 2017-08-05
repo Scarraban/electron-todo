@@ -11,5 +11,8 @@
   "license": "ISC",
   "dependencies": {
     "electron": "^1.6.11"
+  },
+  "devDependencies": {
+    "cross-env": "^5.0.3"
   }
 }

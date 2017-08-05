@@ -32,7 +32,14 @@ const menuTemplate = [
     submenu: [
       {
         label: 'Add Todo',
+        accelerator: 'CommandOrControl+N',
         click: createAddWindow
+      },
+      {
+        label: 'Clear Todos',
+        click() {
+          mainWindow.webContents.send('todos:clear');
+        }
       },
       {
         label: 'Quit',
@@ -59,20 +66,8 @@ if(process.env.NODE_ENV === 'development') {
   menuTemplate.push({
     label: 'Development',
     submenu: [
-      {
-        label: 'Refresh Window',
-        accelerator: 'CommandOrControl+R',
-        click(item, focusedWindow) {
-          focusedWindow.reload();
-        }
-      },
-      {
-        label: 'Developer Tools',
-        accelerator: 'CommandOrControl+Shift+I',
-        click(item, focusedWindow) {
-          focusedWindow.toggleDevTools();
-        }
-      }
+      { role: 'reload' },
+      { role: 'toggledevtools' }
     ]
   });
 }
