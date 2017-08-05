@@ -9,16 +9,16 @@
   <script>
     const electron = require('electron');
     const { ipcRenderer } = electron;
+    const list = document.querySelector('ul');
 
-    ipcRenderer.on('todo:clear', (event) => document.querySelector('ul').innerHTML = '')
+    ipcRenderer.on('todo:clear', (event) => list.innerHTML = '')
 
     ipcRenderer.on('todo:add', (event, todo) => {
       const li = document.createElement('li');
       const text = document.createTextNode(todo);
 
       li.appendChild(text);
-
-      document.querySelector('ul').appendChild(li);
+      list.appendChild(li);
     });
   </script>
 </body>
